@@ -8,7 +8,7 @@ using namespace std;
 int main(){
     string words[12] = {"random", "deafened", "exodus", "subdermatoglyphic", "ambiguous", "graphics", "mangoes", "salamander", "solar", "kaleidoscope", "spectrum", "polarity"};
     srand(time(NULL));
-    int attempts = 0;
+    int mistakes = 0;
     int index = rand() % 12;
     string wordToGuess = words[index];
     bool run = true;
@@ -19,12 +19,12 @@ int main(){
         int decision;
         string wordGuess;
         char letterGuess;
-        cout << "Enter 0 to guess the word, 1 to guess the letter:" << endl;
+        cout << "Enter 0 to guess the word, 1 to guess a letter:" << endl;
         cin >> decision;
         switch(decision) {
             default:
                 cout << "That's not a valid choice." << endl;
-                attempts = 100;
+                mistakes = 100;
                 break;
             case 0:
                 cout << "You have decided to guess the word." << endl;
@@ -36,7 +36,7 @@ int main(){
                     run = false;
                 } else {
                     cout << "Try Again." << endl;
-                    attempts++;
+                    mistakes++;
                 }
                 break; 
             case 1:
@@ -45,15 +45,15 @@ int main(){
                 cin >> letterGuess;
                 if (wordToGuess.find(wordGuess) != string::npos) {
                     int position = wordToGuess.find(letterGuess) + 1;
-                    cout << position << endl;
+                    cout <<"Position #"<< position << endl;
                 } else {
                     cout << "That letter doesn't exist." << endl;
-                    attempts++;
+                    mistakes++;
                 }
                 break;
         }
         //attempts++;
-        if (attempts > 10){
+        if (mistakes > 10){
             run = false;
         }
     }
@@ -61,7 +61,7 @@ int main(){
         cout << "You lost!" << endl;
     } else {
         cout << "Congratulations!" << endl;
-        cout << "Attempts: " << attempts << endl;
+        cout << "Mistakes: " << mistakes << endl;
     }
     return 0;
 }
