@@ -5,7 +5,8 @@
 
 using namespace std;
 
-int main(){
+int main()
+{
     string words[12] = {"random", "deafened", "exodus", "subdermatoglyphic", "ambiguous", "graphics", "mangoes", "salamander", "solar", "kaleidoscope", "spectrum", "polarity"};
     srand(time(NULL));
     int mistakes = 0;
@@ -14,14 +15,16 @@ int main(){
     bool run = true;
     bool guessed = false;
     //cout << wordToGuess << endl;
-    while(run){
+    while(run)
+    {
         //cout << wordToGuess << endl;
         int decision;
         string wordGuess;
         char letterGuess;
         cout << "Enter 0 to guess the word, 1 to guess a letter:" << endl;
         cin >> decision;
-        switch(decision) {
+        switch(decision) 
+        {
             default:
                 cout << "That's not a valid choice." << endl;
                 mistakes = 100;
@@ -53,12 +56,14 @@ int main(){
                 break;
         }
         //attempts++;
-        if (mistakes > 10){
+        if (mistakes > 10)
+        {
             run = false;
         }
     }
     if (guessed == false) {
         cout << "You lost!" << endl;
+        cout << "Actual word: " << wordToGuess << endl;
     } else {
         cout << "Congratulations!" << endl;
         cout << "Mistakes: " << mistakes << endl;
