@@ -41,10 +41,8 @@ int main()
     std::string wordToGuess = words[index];
     bool guessed = false;
     bool run = true;
-    //cout << wordToGuess << endl;
     while(mistakes < 10 && run)
     {
-        //cout << wordToGuess << endl;
         int decision;
         std::string wordGuess;
         char letterGuess;
@@ -75,7 +73,7 @@ int main()
                 auto indexes = findCharIndexesInString(wordToGuess, letterGuess);
                 if (indexes.size() > 0) {
                     for (auto index : indexes) {
-                      std::cout << "Position #" << index + << std::endl;     
+                      std::cout << "Position #" << index + 1 << std::endl;     
                     }
                 } else {
                     std::cout << "That letter doesn't exist.\n";

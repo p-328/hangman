@@ -41,10 +41,8 @@ int main()
     std::string wordToGuess = words[index];
     bool guessed = false;
     bool run = true;
-    //cout << wordToGuess << endl;
     while(mistakes < 10 && run)
     {
-        //cout << wordToGuess << endl;
         int decision;
         std::string wordGuess;
         char letterGuess;
