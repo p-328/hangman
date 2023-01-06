@@ -30,7 +30,11 @@ std::vector<std::string> readFileLines(const char* fileName) {
 
 int main()
 {
-    std::vector<std::string> words = readFileLines("words.txt");
+    std::vector<std::string> words = readFileLines("static/words.txt");
+    if (words.size() == 0) {
+      std::cout << "Cannot play without file static/words.txt!";
+      return 1;
+    }
     srand(time(NULL));
     int mistakes = 0;
     int index = rand() % words.size();
