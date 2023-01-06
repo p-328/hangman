@@ -75,7 +75,7 @@ int main()
                 auto indexes = findCharIndexesInString(wordToGuess, letterGuess);
                 if (indexes.size() > 0) {
                     for (auto index : indexes) {
-                      std::cout << "Position #" << index << std::endl;     
+                      std::cout << "Position #" << index + << std::endl;     
                     }
                 } else {
                     std::cout << "That letter doesn't exist.\n";
