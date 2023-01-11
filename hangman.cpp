@@ -4,7 +4,8 @@
 #include <ctime>
 #include <fstream>
 #include <vector>
-std::vector<int> findCharIndexesInString(std::string& str, const char c) {
+// Find all indexes of an instance of `c` in a word
+std::vector<int> findCharIndexesInString(const std::string& str, const char c) {
   std::vector<int> results = {};
   int i = 0;
   for (auto& ch : str) {
@@ -15,6 +16,7 @@ std::vector<int> findCharIndexesInString(std::string& str, const char c) {
   }
   return results;
 }
+// Get every line of the file
 std::vector<std::string> readFileLines(const char* fileName) {
   std::ifstream ifs(fileName);
   if (!ifs.is_open()) {
